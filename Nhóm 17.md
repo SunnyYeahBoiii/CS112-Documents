@@ -28,10 +28,17 @@ print(flood(0 , 0))
 
 Ta xác định độ phức tạp của thuật toán qua các bước sau:
 - Đếm phép toán cơ bản của bài toán: một lần loang của ô đen.
-- Từ đó, mỗi bước số ô mới được loang là $4 * t$ nên ta có:$$f(t) = f(t - 1) + 4t$$
+- Từ đó, mỗi bước số ô mới được loang là $4 * t$ nên ta có:
+
+$$f(t) = f(t - 1) + 4t$$
+
 $$ \Leftrightarrow f(t) = 1 + 4 \cdot 1 + 4 \cdot 2 + ... + 4 \cdot(t - 1) + 4 \cdot t$$
+
 $$\Leftrightarrow f(t) = 1 + 4 \cdot \frac{t \cdot (t + 1)}{2}$$
+
 $$\Leftrightarrow f(t) = 1 + 2 \cdot t \cdot (t + 1)$$
+
+
 - Kết luận, ta có độ phức tạp của thuật toán như trên
 
 # Bài 2:
@@ -69,6 +76,7 @@ Thuật toán tối ưu như sau:
 ## Bài 3:
 
 - Ta có thể phân tích như sau từ đoạn code:
+- 
 $$T(n) = 
 	\begin{cases}
 	\Theta(1) & , n \le 1\\
@@ -82,13 +90,22 @@ $$\Leftrightarrow T(n) =
 	2 \cdot \sum_{i = 0}^{n - 1}T(i) + \Theta(n) &, n \ge 2
 	\end{cases}$$
 - Xét trường hợp $n \ge 2$:
+- 
 $$T(n) = 2 \cdot \sum_{i = 0}^{n - 1}T(i) + \Theta(n)$$
+
 - Đặt $S(n) = \sum_{k = 0}^n T(k)$
+- 
 $$\Rightarrow T(n) = 2 \cdot S(n - 1) + \Theta(n)$$
+
 $$\Rightarrow S(n) = S(n - 1) + T(n)$$
+
 $$\Leftrightarrow S(n) = S(n - 1) + 2 \cdot S(n - 1) + \Theta(n)$$
+
 $$\Leftrightarrow S(n) = 3 \cdot S(n - 1) + \Theta(n)$$
+
 - Lấy bậc mũ chính:
 $$\Rightarrow S(n) = \Theta(3^n)$$
+
 - Vì $T(n) = S(n) - S(n - 1)$
+
 $$\Rightarrow T(n) = \Theta(3^n)$$
