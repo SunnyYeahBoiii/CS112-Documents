@@ -18,6 +18,7 @@ long long Dfs(int u, vector<bool>& visited) {
     return ret;
 }
 
+
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
@@ -29,6 +30,7 @@ int main() {
         int u, v, w;
         cin >> u >> v >> w;
         adj[u].push_back({v, w});
+        adj[v].push_back({u, w});
     }
     vector<bool> visited(n + 1, false);
     long long res = Dfs(1, visited);
