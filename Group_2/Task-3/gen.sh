@@ -11,9 +11,7 @@ echo "[Info] Base seed = ${base_seed}"
 echo "[Compile] Building generators and solution..."
 g++ -std=c++17 -O2 -pipe -static -s validator.cpp  -o validator
 g++ -std=c++17 -O2 -pipe -static -s solution.cpp   -o solution
-g++ -std=c++17 -O2 -pipe -static -s gen_sub1.cpp   -o gen_sub1
-g++ -std=c++17 -O2 -pipe -static -s gen_sub2.cpp   -o gen_sub2
-g++ -std=c++17 -O2 -pipe -static -s gen_sub3.cpp   -o gen_sub3
+g++ -std=c++17 -O2 -pipe -static -s gen.cpp   -o gen
 echo "[Compile] Done."
 
 rm -rf tests
@@ -54,24 +52,10 @@ gen_and_run() {
 }
 
 # Subtask 1 (20 tests)
-echo "[Generate] Subtask 1"
-gen_and_run gen_sub1 1  1 10
-gen_and_run gen_sub1 2 11 14
-gen_and_run gen_sub1 3 15 17
-gen_and_run gen_sub1 4 18 20
-
-# Subtask 2 (40 tests)
-echo "[Generate] Subtask 2"
-gen_and_run gen_sub2 1 21 30
-gen_and_run gen_sub2 2 31 34
-gen_and_run gen_sub2 3 35 47
-gen_and_run gen_sub2 4 48 60
-
-# Subtask 3 (40 tests)
-echo "[Generate] Subtask 3"
-gen_and_run gen_sub3 1 61 70
-gen_and_run gen_sub3 2 71 80
-gen_and_run gen_sub3 3 81 90
-gen_and_run gen_sub3 4 91 100
+echo "[Generate]"
+gen_and_run gen 1 1 10
+gen_and_run gen 2 11 30
+gen_and_run gen 3 31 60
+gen_and_run gen 4 61 100
 
 echo "✅ All test data generated successfully with base seed ${base_seed}!"

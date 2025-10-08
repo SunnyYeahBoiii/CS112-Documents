@@ -1,4 +1,9 @@
-# *
-# !*/
-outputs/*
-tests/*
+*
+!*/
+!*.cpp
+!*.h
+!*.py
+!*.ps1
+!*.sh
+outputs
+tests

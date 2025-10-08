@@ -135,12 +135,24 @@ void genNormalCase(int s) {
 
 
 void genSpecialCase(int s) {
-    int n = rnd.next(2, MAXN);
-    int m = n - 1;
-    cout << n << ' ' << m << '\n';
-    if (s % 2 == 1)
+    if (s % 3 == 1){
+        int n = rnd.next(2, MAXN);
+        int m = n - 1;
+        cout << n << ' ' << m << '\n';
         genLineGraph(n, m, MAXW/2, MAXW);
-    else genStarGraph(n, m, MAXW/2, MAXW);
+    }
+    else if (s % 3 == 2){
+        int n = rnd.next(2, MAXN);
+        int m = n - 1;
+        cout << n << ' ' << m << '\n';
+        genStarGraph(n, m, MAXW/2, MAXW);
+    }
+    else{
+        int n = rnd.next(MAXN/4, MAXN/2);
+        int m = MAXM;
+        cout << n << ' ' << m << '\n';
+        genLineGraph(n, m, 1, MAXW);
+    }
 }
 
 void genEdgeCase(int s) {
