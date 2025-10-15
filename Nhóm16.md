@@ -10,7 +10,7 @@ pair<float,float> getNextPoint(float x, float y, int lastBossID) {
         found_zone = 1;
         zone_center = {(int)x,(int)y};
     }
-if (found_zone) {
+    if (found_zone) {
         float r = 100 + rand() % 300;
         float t = (rand() % 360) * M_PI / 180.0;
         return {zone_center.first + r * cos(t),
