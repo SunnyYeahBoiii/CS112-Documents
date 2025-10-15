@@ -1,11 +1,11 @@
 ```c++
-bool found_zone = 0;
-pair<int,int> zone_center;
-int ang_idx = 0, rad_idx = 1;
-const float STEP_R = 100;
-const float STEP_ANG = M_PI / 4;
-
 pair<float,float> getNextPoint(float x, float y, int lastBossID) {
+    static bool found_zone = 0;
+    static pair<int,int> zone_center;
+    static int ang_idx = 0, rad_idx = 1;
+    static const float STEP_R = 100;
+    static const float STEP_ANG = M_PI / 4;
+
     if (lastBossID == 36) {
         found_zone = 1;
         zone_center = {(int)x,(int)y};
@@ -27,6 +27,7 @@ pair<float,float> getNextPoint(float x, float y, int lastBossID) {
     }
     return {nx, ny};
 }
+
 ```
 
 Thuật toán được mô tả như sau:
